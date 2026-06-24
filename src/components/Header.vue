@@ -24,7 +24,7 @@ const menuItems = [
     {name: 'About', href: '#about'},
     {name: 'Skills', href: '#skills'},
     {name: 'Project', href: '#project'},
-    {name: 'Certification', href: '#certificates'},
+    // {name: 'Certification', href: '#certificates'},
 ]
 
 const scrollToSection = (href) => {

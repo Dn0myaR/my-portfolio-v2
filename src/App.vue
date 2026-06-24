@@ -4,7 +4,7 @@
   import 'aos/dist/aos.css'
   import { onMounted } from 'vue';
   import MySelfSection from './components/MySelfSection.vue';
-  import Certificates from './components/Certificates.vue';
+  // import Certificates from './components/Certificates.vue';
   import Experience from './components/Experience.vue';
   import Projects from './components/Projects.vue';
   import Contact from './components/Contact.vue';
@@ -25,7 +25,7 @@
     <Header />
     <MySelfSection />
     <Experience />
-    <Certificates />
+    <!-- <Certificates /> -->
     <Projects />
     <Contact />
     <Footer />
