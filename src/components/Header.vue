@@ -24,7 +24,7 @@ const menuItems = [
     {name: 'About', href: '#about'},
     {name: 'Skills', href: '#skills'},
     {name: 'Project', href: '#project'},
-    // {name: 'Certification', href: '#certificates'},
+    // {name: 'Certification', href: '#certificates'}, //tempo comment
 ]
 
 const scrollToSection = (href) => {
@@ -37,8 +37,6 @@ const scrollToSection = (href) => {
 </script>
 
 <template>
-    <!-- <header class="fixed top-0 left-0 w-full z-50 px-6 py-7 transition-colors
-     duration-300 bg-transparent" id="mainHeader"> -->
      <header 
         :class="[
             'fixed top-0 left-0 w-full z-50 px-1 py-1 transition-colors duration-300',
@@ -46,7 +44,7 @@ const scrollToSection = (href) => {
         ]">
         <div class="max-w-7xl mx-auto flex justify-between items-center" >
             <div class="text-white text-3xl font-black cursor-pointer">
-                <!-- PORTFOLIO<span class="text-primary">.</span> -->
+                <!-- can input message -->
             </div>
             <!-- navigation -->
             <nav class="hidden md:flex items-center mt-5 gap-10">
