@@ -74,7 +74,7 @@
 
 
 <template>
-    <section class="text-white py-20 relative overflow-hidden"
+    <section class="text-white py-20 relative overflow-hidden bg-slate-700"
     id="skills">
         <div class="max-w-7xl mx-auto px-6 lg:px-16 relative z-10">
             <div class="grid md:grid-cols-2 gap-16 items-start">
@@ -88,7 +88,7 @@
                         class="group">
                             <div class="flex items-center justify-between mb-2"> 
                                 <div class="flex items-center gap-3" >
-                                    <div class="p-2 bg-[#111a3e] rounded-lg 
+                                    <div class="p-2 bg-slate-700 rounded-lg 
                                         group-hover:bg-primary transition-colors
                                         duration-300">
                                         <!-- <component :is="skill.icons"
