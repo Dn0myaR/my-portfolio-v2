@@ -2,6 +2,7 @@
 import { Download } from 'lucide-vue-next';
 import mypic from '../assets/mypics2.png';
 import { ref, onMounted } from 'vue';
+import resumePdf from '@/assets/RaymondCV.pdf'
 
 const typedText = ref('');
 const textToType = "Raymond";
@@ -110,10 +111,10 @@ onMounted(() => {
                                     <Download :size="18" class="text-primary animate-bounce"/>
                                     <div class="download-loader text-white hidden"/>
                                 </div>
-                                <a href="/RaymondCV.pdf" 
-                                download="RaymondCV.pdf"
-                                class="pl-2 text-primary ">Download Resume
-                            </a>
+                                <a :href="resumePdf" 
+                                    download="RaymondCV.pdf"
+                                    class="pl-2 text-primary ">Download Resume
+                                </a>
                             </div>
                         </button>
                     </div>
