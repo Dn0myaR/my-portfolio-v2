@@ -29,8 +29,9 @@
 
 @theme {
     --color-primary: #0fe1f0;
-    --animate-wave: wave 2s infinite;
 
+
+    --animate-wave: wave 2s infinite;
     @keyframes wave {
         0%, 100% { transform: rotate(0deg); }
         10% { transform: rotate(14deg); }
@@ -40,4 +41,25 @@
         50% { transform: rotate(10deg); }
         60% { transform: rotate(0deg); }
     }
+
+    --animate-blob: blob 12s infinite alternate;
+    @keyframes blob {
+        0% { transform: translate(0px, 0px) scale(1); }
+        50% { transform: translate(40px, -60px) scale(1.15); }
+        100% { transform: translate(-20px, 20px) scale(0.95); }
+    }
+
+    --animate-grid-move: gridMove 20s linear infinite;
+    --animate-pulse-slow: pulseSlow 4s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+    @keyframes gridMove {
+        0% { background-position: 0 0; }
+        100% { background-position: 4rem 4rem; }
+    }
+
+    @keyframes pulseSlow {
+        0%, 100% { opacity: 0.2; transform: scale(1); }
+        50% { opacity: 0.6; transform: scale(1.1); }
+    }
+
+    
 }

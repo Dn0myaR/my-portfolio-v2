@@ -3,7 +3,7 @@
 </script>
 
 <template >
-    <footer class="mt-8 border z-10 border-t-[#33353F]
+    <footer class="border z-10 border-primary bg-slate-400
     border-l-transparent border-r-transparent text-white"
     >
     <!-- <div class="container p-6 md:p-12 flex-col flex md:flex-row
