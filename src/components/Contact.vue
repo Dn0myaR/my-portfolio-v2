@@ -4,8 +4,7 @@ import emailjs from 'emailjs-com';
 import emails from '../assets/gmail.png';
 import linkedin from '../assets/linkedin.png';
 import github from '../assets/github.png';
-import bgvideo from '../assets/contactbg.mp4' // Tama ito
-    
+import bgvideo from '../assets/contactbg.mp4'
     const contactInfo = [
         { 
             id: 1,
@@ -61,9 +60,9 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
         }
     }
 </script>
-
 <template>
-    <section class="relative py-20 overflow-hidden h-screen bg-slate-400" id="contact">
+    <!-- INAYOS: Pinalitan ang h-screen ng min-h-screen, at dinagdagan ng flex flex-col justify-between -->
+    <section class="relative py-20 overflow-hidden min-h-screen flex flex-col justify-between bg-slate-400" id="contact">
         <video 
             autoplay 
             loop 
@@ -73,11 +72,11 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
             <source :src="bgvideo" type="video/mp4" />
         </video>
         
-        <!-- Overlay Layer -->
+        <!-- Overlay Layer (I-uncomment mo ito kung gusto mong medyo madilim ang video background mo) -->
         <!-- <div class="absolute top-0 left-0 w-full h-full bg-slate-900/85 backdrop-blur-[2px] z-10"></div> -->
         
-        <!-- INAYOS: Dinagdagan ng "relative" para gumana ang z-20. Kung hindi, matatakpan ang buong content at form mo -->
-        <div class="container mx-auto px-4 max-w-6xl relative z-20">
+        <!-- INAYOS: Dinagdagan ng class na "grow w-full" para kainin nito ang space sa itaas at itulak ang footer pababa -->
+        <div class="container mx-auto px-4 max-w-6xl relative z-20 grow w-full ">
             <div class="text-center mb-12">
                 <h2 class="text-3xl md:text-5xl font-extrabold text-blue-400 mb-2">
                     Connect with me
@@ -85,7 +84,7 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
                 <div class="w-28 h-1 bg-primary mx-auto mt-2 rounded-2xl"></div>
             </div>
             
-            <div class="grid md:grid-cols-2 gap-8">
+            <div class="grid md:grid-cols-2 gap-8 ">
                 <div>
                     <p class="text-gray-400 mb-8 leading-relaxed">
                         <!-- Let’s chat. Drop a message! -->
@@ -116,8 +115,8 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
                     </div>
                 </div>
                 
-                <!-- form (Ginawang may kaunting transparency para mas bumagay sa video background) -->
-                <div class="bg-gray-800/50 border border-gray-700/50 rounded-lg p-6 backdrop-blur-sm ">
+                <!-- Form -->
+                <div class="bg-gray-800/50 border border-gray-700/50 rounded-lg p-6 backdrop-blur-sm">
                     <form @submit.prevent="handleSubmit">
                         <div class="mb-4">
                             <label for="name" class="text-white block mb-2 text-sm font-medium">
@@ -152,6 +151,8 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
                             rows="4"
                             required />
                         </div>
+                        
+                        <!-- INAYOS: Sinara nang buo ang naputol mong button element at form tag -->
                         <button type="submit" :disabled="isSubmitting"
                         class="w-full px-6 py-2.5 bg-primary text-white rounded-lg font-medium hover:bg-primary/80 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
                             {{ isSubmitting ? 'Sending...' : 'Send Message' }}
@@ -160,5 +161,11 @@ import bgvideo from '../assets/contactbg.mp4' // Tama ito
                 </div>
             </div>
         </div>
+
+        <!-- FOOTER LAYER: Narito na siya sa loob ng section pero selyadong nasa pinakailalim na ngayon -->
+        <div class="w-full text-center relative z-10 text-sm text-white">
+            <p>© All Rights Reserved. |  Raymond Seeno</p>
+        </div>
+        
     </section>
 </template>

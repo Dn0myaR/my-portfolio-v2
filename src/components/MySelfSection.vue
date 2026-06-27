@@ -1,5 +1,5 @@
 <script setup>
-import { Download } from 'lucide-vue-next';
+import { Download, Github, Linkedin } from 'lucide-vue-next';
 import mypic from '../assets/mypicsformal.png';
 import { ref, onMounted, onUnmounted } from 'vue'; 
 import resumePdf from '@/assets/RaymondCV.pdf';
@@ -11,6 +11,8 @@ import vue from '../assets/vue.png'
 import laravel from '../assets/Laravel.png'
 import tailwind from '../assets/Tailwind_CSS.png'
 import php from '../assets/php.png'
+import linkedin from '../assets/linkedin.png';
+import github from '../assets/github.png';
 
 // --- EFFECT na nag tatype ---
 const typedText = ref('');
@@ -200,10 +202,10 @@ onMounted(() => {
 <template>
     <section id="about" class="bg-slate-400 relative w-full h-screen md:pt-0 lg:pt-28 overflow-hidden" data-aos="zoom-in-up ">
         <div class="absolute top-0 inset-x-0 h-64 flex items-start">
-            <div class="h-24 w-2/3 bg-linear-to-br from-[#6ce2ebbe] blur-2xl invisible opacity-40">
+            <!-- <div class="h-24 w-2/3 bg-linear-to-br from-[#6ce2ebbe] blur-2xl invisible opacity-40">
             </div>
             <div class="h-20 w-3/4 bg-linear-to-r from-[#6ce2ebbe] opacity-40 blur-2xl"> 
-            </div>
+            </div> -->
         </div>
            
         <canvas ref="canvasRef" class="absolute inset-0 z-0 pointer-events-none"></canvas>
@@ -254,13 +256,78 @@ onMounted(() => {
                                 </div>
                                 <a :href="resumePdf" 
                                     download="RaymondCV.pdf"
-                                    class="pl-2 text-primary ">Download Resume
+                                    class="pl-2 text-primary ">Download CV
+                                </a>
+                                
+                            </div>
+                        </button>
+                        
+
+                        <button 
+                            @mouseenter="isHoveringBtn = true"
+                            @mouseleave="isHoveringBtn = false"
+                            class="border border-primary px-6 md:px-7 py-3 
+                            rounded-full relative group w-full sm:w-max
+                            flex justify-center bg-gray-900/50 backdrop-blur-sm cursor-pointer transition-all 
+                            duration-300 ease-in-out hover:scale-105"
+                        > 
+                            <div class="hover:scale-105 transition-all
+                                ease-in-out flex justify-center relative">
+                                <div class="scg-container">
+                                    <Github :size="18" class="text-primary animate-bounce"/>
+                                    <div class="download-loader text-white hidden"/>
+                                </div>
+                                <a href="https://github.com/Dn0myaR" target="_blank" rel="noopener noreferrer"
+                                    class="pl-2 text-primary">Github
+                                </a>
+                                
+                            </div>
+
+                        </button>
+                           <button 
+                            @mouseenter="isHoveringBtn = true"
+                            @mouseleave="isHoveringBtn = false"
+                            class="border border-primary px-6 md:px-7 py-3 
+                            rounded-full relative group w-full sm:w-max
+                            flex justify-center bg-gray-900/50 backdrop-blur-sm cursor-pointer transition-all 
+                            duration-300 ease-in-out hover:scale-105"
+                        > 
+                            <div class="hover:scale-105 transition-all
+                            ease-in-out flex justify-center relative">
+                                <div class="scg-container">
+                                    <Linkedin :size="18" class="text-primary animate-bounce"/>
+                                    <div class="download-loader text-white hidden"/>
+                                </div>
+                                <a href="https://www.linkedin.com/in/raymondsereno" target="_blank" rel="noopener noreferrer"
+                                    class="pl-2 text-primary">LinkedIN
                                 </a>
                             </div>
                         </button>
                     </div>
                 </div>
+
+
+
                 <div class="lg:h-full md:flex">
+                    <!-- Ginawa nating relative at flex-center ang pinaka-wrapper para laging magkatapat ang dalawa -->
+                    <div class="flex w-full h-96 min-h-96 lg:min-h-[none] lg:w-full lg:h-full items-center justify-center relative">
+                        
+                        <!-- ANG LIWANAG (Nasa gitnang-gitna) -->
+                        <div class="absolute z-0 w-90 h-120 rounded-full bg-linear-to-tr 
+                                    from-primary via-[#41e2ee] to-white opacity-40 blur-3xl animate-pulse">
+                        </div>
+                        
+                        <!-- IYONG PICTURE (Naka-relative z-10 para lumutang) -->
+                        <div class="relative z-10 w-72 h-90 p-1">
+                            <img :src="mypic" alt="Me"
+                                loading="lazy"
+                                class="w-full h-full rounded-full object-cover shadow-lg border-2 border-primary/20"
+                            >
+                        </div>
+
+                    </div>
+                </div>
+                <!-- <div class="lg:h-full md:flex">
                     <div class="flex w-full h-96 min-h-96 lg:min-h-[none]
                         lg:w-full lg:h-full items-center relative">
                         <div class="absolute z-0 top-1/2 -translate-y-1/2
@@ -278,7 +345,7 @@ onMounted(() => {
                             >
                         </div>
                     </div>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
