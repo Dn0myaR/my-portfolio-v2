@@ -68,6 +68,12 @@
             role: "Software Developer",
             company: "HRD Singapore Pte., Ltd.",
             date: "August 2022 - Present"
+        },
+        {
+            id: 2,
+            role: "Office Staff / Group Leader",
+            company: "HRD Singapore Pte., Ltd.",
+            date: "December 2016 - 2022"
         }
     ]
 </script>
@@ -83,20 +89,20 @@
                     font-extrabold mb-12">Tech 
                     <span class="text-primary">Stack</span>
                     </h2>
-                    <div class="space-y-8">
+                    <div class="space-y-8 ">
                         <div v-for="skill in skills" :key="skill.id"
-                        class="group">
+                        class="group hover:border-primary/50 
+                        hover:shadow-[0_0_20px_rgba(15,225,240,0.3)]
+                        transition-all duration-300 cursor-pointer hover:scale-105 rounded-2xl">
                             <div class="flex items-center justify-between mb-2"> 
                                 <div class="flex items-center gap-3" >
                                     <div class="p-2 bg-slate-700 rounded-lg 
                                         group-hover:bg-primary transition-colors
                                         duration-300">
-                                        <!-- <component :is="skill.icons"
-                                        :size="20" class="text-primary
-                                        group-hover:text-white" /> -->
                                         <img :src="skill.image" :alt="skill.name" 
                                         class="w-7 h-7 text-primary 
-                                        group-hover:text-white">
+                                         group-hover:rotate-12 transition-transform 
+                                        duration-300 ease-in-out hover:scale-105 cursor-pointer">
                                     </div>  
                                     <span class="font-medium tracking-wide">
                                         {{ skill.name }}
@@ -124,13 +130,49 @@
                         <div v-for="exp in experiences" :key="exp.id"
                         class="group relative p-6 rounded-2xl bg-[#111a3e]
                         border border-[#1f1641] hover:border-primary/50 
-                        transition-all duration-300">
+                        hover:shadow-[0_0_20px_rgba(15,225,240,0.3)]
+                        transition-all duration-300 cursor-pointer hover:scale-105">
+                            <div class="flex gap-4">
+                                <div class="shrink-0 mt-1">
+                                    <!-- Inayos mula bordr -> border -->
+                                    <div class="p-3 bg-[#050816] rounded-xl 
+                                    border border-gray-800 group-hover:border-primary
+                                    transition-colors">
+                                        <!-- Inayos mula priamry -> primary -->
+                                        <Briefcase class="text-primary" :size="24"/>
+                                    </div>
+                                </div>
+                                <div class="grow">
+                                    <h3 class="text-xl font-bold text-white 
+                                    group-hover:text-primary transition-colors">
+                                        {{ exp.role }}
+                                    </h3>
+                                    <div class="flex flex-col sm:flex-row sm:items-center
+                                    gap-2 sm:gap-4 text-sm text-gray-400">
+                                        <span class="flex items-center gap-1.5">
+                                            <Building2 :size="14" class="text-primary" />
+                                            {{ exp.company }}
+                                        </span>
+                                        <span class="flex items-center gap-1.5">
+                                            <Calendar :size="14" class="text-primary" />
+                                            {{ exp.date }}
+                                        </span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- <div class="space-y-6">
+                        <div v-for="exp in experiences" :key="exp.id"
+                        class="group relative p-6 rounded-2xl bg-[#111a3e]
+                        border border-[#1f1641] hover:border-primary/50 
+                        transition-all duration-300 cursor-pointer">
                             <div class="flex gap-4">
                                 <div class="shrink-0 mt-1">
                                     <div class="p-3 bg-[#050816] rounded-xl 
-                                    border bordr-gray-800 group-hover:border-primary
+                                    border border-gray-800 group-hover:border-primary
                                     transition-colors">
-                                        <Briefcase class="text-priamry" :size="24"/>
+                                        <Briefcase class="text-primary" :size="24"/>
                                     </div>
                                 </div>
                                 <div class="grow">
@@ -153,7 +195,7 @@
                             </div>
 
                         </div>
-                    </div>
+                    </div> -->
                 </div>
             </div>
         </div>

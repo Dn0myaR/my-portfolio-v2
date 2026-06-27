@@ -1,13 +1,14 @@
 <script setup>
-import { Github, Linkedin, Mail } from 'lucide-vue-next';
 import { reactive, ref } from 'vue';
-import emailjs from 'emailjs-com'
-
+import emailjs from 'emailjs-com';
+import emails from '../assets/gmail.png';
+import linkedin from '../assets/linkedin.png';
+import github from '../assets/github.png';
     
     const contactInfo = [
         { 
             id: 1,
-            icon: Mail,
+            image: emails,
             title: "Email",
             value: "cer.rhei@gmail.com",
             link: "https://mail.google.com/mail/?view=cm&fs=1&to=cer.rhei@gmail.com"
@@ -15,7 +16,7 @@ import emailjs from 'emailjs-com'
         },
         { 
             id: 2,
-            icon: Linkedin,
+            image: linkedin,
             title: "LinkedIN",
             value: "www.linkedin.com/in/raymondsereno",
             link: "https://www.linkedin.com/in/raymondsereno"
@@ -23,7 +24,7 @@ import emailjs from 'emailjs-com'
         },
         {
             id: 3,
-            icon: Github, // import { Github } from 'lucide-vue-next'
+            image: github, // import { Github } from 'lucide-vue-next'
             title: "GitHub",
             value: "github.com/Dn0myaR",
             link: "https://github.com/Dn0myaR"
@@ -83,11 +84,17 @@ import emailjs from 'emailjs-com'
                     <div class="space-y-6">
                         <div v-for="info in contactInfo" :key="info.id"
                         class="flex items-center gap-4 group">
-                            <div class="w-10 h-10 rounded-full bg-primary/10
+                            <div class="w-10 h-10 rounded-full
                             flex items-center justify-center 
                             group-hover:bg-primary/20 transition-colors">
-                                <component :is="info.icon" :size="18"
-                                class="text-primary" />
+                                <!-- <component :is="info.icon" :size="18"
+                                class="text-primary" /> -->
+                                  <img :src="info.image" :alt="info.name"
+                                    class="w-7 h-7 text-primary 
+                                        group-hover:rotate-12 transition-transform 
+                                    duration-300 ease-in-out hover:scale-105 cursor-pointer">
+
+
                             </div>
                             <div>
                                 <h4 class="text-white font-medium text-sm">

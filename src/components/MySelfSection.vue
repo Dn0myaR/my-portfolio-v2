@@ -1,6 +1,6 @@
 <script setup>
 import { Download } from 'lucide-vue-next';
-import mypic from '../assets/mypics2.png';
+import mypic from '../assets/mypicsformal.png';
 import { ref, onMounted, onUnmounted } from 'vue'; 
 import resumePdf from '@/assets/RaymondCV.pdf';
 import sql from '../assets/sql-file.png'
@@ -126,39 +126,6 @@ const initParticles = () => {
             if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
             if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
         }
-        // update() {
-        //     //   Mouse Hover check
-        //     const dxMouse = mousePos.x - this.x;
-        //     const dyMouse = mousePos.y - this.y;
-        //     const distanceToMouse = Math.sqrt(dxMouse * dxMouse + dyMouse * dyMouse);
-        
-        //     // Check kung tinapatan ang logo (kung ang distansya ay mas maliit sa size ng logo)
-        //     const isHoveringLogo = distanceToMouse < this.size;
-
-        //     if (isHoveringLogo) {
-        //         // PAUSE movement pag naka-hover
-        //         // (Walang gagawin sa x at y, kaya titigil siya)
-        //     } else if (isHoveringBtn.value && mousePos.x !== null) {
-        //         // MAGNETIC EFFECT (kung hindi naka-hover sa logo pero naka-hover sa button)
-        //         const dx = mousePos.x - this.x;
-        //         const dy = mousePos.y - this.y;
-        //         const distance = Math.sqrt(dx * dx + dy * dy);
-        //         if (distance < 300) {
-        //             this.x += dx * 0.03;
-        //             this.y += dy * 0.03;
-        //         } else {
-        //             this.x += this.vx;
-        //             this.y += this.vy;
-        //         }
-        //     } else {
-        //         this.x += this.vx;
-        //         this.y += this.vy;
-        //     }
-        
-        //     // Bounce logic sa pader
-        //     if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-        //     if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
-        // }
 
         draw() {
             if (this.logo.complete) {
@@ -231,7 +198,7 @@ onMounted(() => {
 </script>       
 
 <template>
-    <section id="about" class="bg-slate-600 relative w-full h-screen md:pt-0 lg:pt-28 overflow-hidden" data-aos="zoom-in-up ">
+    <section id="about" class="bg-slate-400 relative w-full h-screen md:pt-0 lg:pt-28 overflow-hidden" data-aos="zoom-in-up ">
         <div class="absolute top-0 inset-x-0 h-64 flex items-start">
             <div class="h-24 w-2/3 bg-linear-to-br from-[#6ce2ebbe] blur-2xl invisible opacity-40">
             </div>
@@ -254,7 +221,7 @@ onMounted(() => {
                         <span class="inline-block animate-wave origin-[70%_70%]">👋</span>
                         </h1>
                     </div>
-                    <p class="text-gray-200 pt-8 text-center lg:text-left
+                    <p class="text-slate-900 pt-8 text-center lg:text-left
                     mx-auto max-w-xl">
                         a full‑stack web developer with experience in   
                         Laravel, Vue, JavaScript, HTML, and CSS. 
@@ -276,7 +243,8 @@ onMounted(() => {
                             @mouseleave="isHoveringBtn = false"
                             class="border border-primary px-6 md:px-7 py-3 
                             rounded-full relative group w-full sm:w-max
-                            flex justify-center bg-gray-900/50 backdrop-blur-sm cursor-pointer"
+                            flex justify-center bg-gray-900/50 backdrop-blur-sm cursor-pointer transition-all 
+                            duration-300 ease-in-out hover:scale-105"
                         > 
                             <div class="hover:scale-105 transition-all
                             ease-in-out flex justify-center relative">
@@ -294,7 +262,7 @@ onMounted(() => {
                 </div>
                 <div class="lg:h-full md:flex">
                     <div class="flex w-full h-96 min-h-96 lg:min-h-[none]
-                    lg:w-full lg:h-full items-center relative">
+                        lg:w-full lg:h-full items-center relative">
                         <div class="absolute z-0 top-1/2 -translate-y-1/2
                         w-5/6 right-0 h-[calc(80%+20px)] bg-linear-to-tr
                         opacity-25 from-[#41e2eebe] to-primary blur-2xl">
@@ -302,7 +270,7 @@ onMounted(() => {
                         <div class="absolute h-full z-10 p-2 -translate-y-1/2 
                             top-1/2 lg:right-3 md:right-40 sm:right-16">
                             <img :src="mypic" alt="Me"
-                            width="500"
+                            width="900"
                             height="auto"
                             loading="lazy"
                             class="w-full h-full rounded-[30%_70%_70%_30%/30%_30%_70%_70%]
