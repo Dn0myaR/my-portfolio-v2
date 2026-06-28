@@ -200,7 +200,7 @@ onMounted(() => {
 </script>       
 
 <template>
-    <section id="about" class="bg-slate-400 relative w-full h-screen md:pt-0 lg:pt-28 overflow-hidden" data-aos="zoom-in-up ">
+    <section id="about" class="bg-slate-400 relative md:w-full md:h-screen md:pt-0 lg:pt-28 overflow-hidden" data-aos="zoom-in-up ">
         <div class="absolute top-0 inset-x-0 h-64 flex items-start">
             <!-- <div class="h-24 w-2/3 bg-linear-to-br from-[#6ce2ebbe] blur-2xl invisible opacity-40">
             </div>

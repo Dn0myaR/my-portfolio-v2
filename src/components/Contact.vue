@@ -62,7 +62,7 @@ import bgvideo from '../assets/contactbg.mp4'
 </script>
 <template>
     <!-- INAYOS: Pinalitan ang h-screen ng min-h-screen, at dinagdagan ng flex flex-col justify-between -->
-    <section class="relative py-20 overflow-hidden min-h-screen flex flex-col justify-between bg-slate-400" id="contact">
+    <section class="relative py-20 overflow-hidden md:min-h-screen flex flex-col justify-between bg-slate-400" id="contact">
         <video 
             autoplay 
             loop 

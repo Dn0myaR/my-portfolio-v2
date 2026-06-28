@@ -52,7 +52,7 @@
 
 <template>
     <!-- 1. MAIN SECTION: Ginawang light background (bg-slate-50) na may gumagalaw na grid lines -->
-    <section class="relative py-16 bg-slate-400 overflow-hidden  h-screen
+    <section class="relative py-16 bg-slate-400 overflow-hidden  md:h-screen
                     bg-[linear-gradient(to_right,#e2e8f0_1px,transparent_1px),linear-gradient(to_bottom,#e2e8f0_1px,transparent_1px)] 
                     bg-size-[4rem_4rem] animate-grid-move" id="project">
         
